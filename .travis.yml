@@ -1,4 +1,9 @@
 language: java
 jdk:
 - oraclejdk8
-script: ant build
+addons:
+  sonarcloud:
+    organization: "vywei-github" # the key of the org you chose at step #3
+script:
+  - ant build
+  - sonar-scanner
